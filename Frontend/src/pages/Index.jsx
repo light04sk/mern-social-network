@@ -1,11 +1,11 @@
-import React from 'react'
+import HeroSection from "../components/LandingPage/HeroSection";
 
-const Landing = () => {
+const Index = () => {
   return (
-    <div>
-      Landing page
-    </div>
-  )
-}
+    <>
+      <HeroSection />
+    </>
+  );
+};
 
-export default Landing
+export default Index;

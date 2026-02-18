@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Join() {
+const Signup = () => {
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
       <div className="bg-white w-full max-w-md p-8 rounded-xl shadow-md">
@@ -8,7 +8,7 @@ export default function Join() {
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-gray-800">
             Pro
-            <span className="bg-blue-600 text-white px-2 py-1 rounded-md">
+            <span className="bg-blue-600 text-white px-2 ml-1 rounded-md">
               net
             </span>
           </h1>
@@ -73,11 +73,13 @@ export default function Join() {
         {/* Footer */}
         <p className="text-center text-gray-600 mt-6">
           Already on Pronet?{" "}
-          <Link to="/" className="text-blue-600 font-medium hover:underline">
+          <Link to="/signin" className="text-blue-600 font-medium hover:underline">
             Sign in
           </Link>
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default Signup;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function SignIn() {
+const SignIn = () => {
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
       <div className="bg-white w-full max-w-md p-8 rounded-xl shadow-md">
@@ -8,7 +8,7 @@ export default function SignIn() {
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-gray-800">
             Pro
-            <span className="bg-blue-600 text-white px-2 py-1 rounded-md">
+            <span className="bg-blue-600 text-white px-2 ml-1 rounded-md">
               net
             </span>
           </h1>
@@ -52,7 +52,7 @@ export default function SignIn() {
         <p className="text-center text-gray-600 mt-6">
           New to Pronet?{" "}
           <Link
-            to="/join"
+            to="/signup"
             className="text-blue-600 font-medium hover:underline"
           >
             Join now
@@ -61,4 +61,6 @@ export default function SignIn() {
       </div>
     </div>
   );
-}
+};
+
+export default SignIn;
