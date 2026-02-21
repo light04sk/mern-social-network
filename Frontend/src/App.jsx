@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import PublicLayout from "./layouts/PublicLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Feed from "./pages/feed";
+import Network from "./pages/Network";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
 
         <Route element={<DashboardLayout />}>
           <Route path="/feed" element={<Feed />} />
+          <Route path="/network" element={<Network />} />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
