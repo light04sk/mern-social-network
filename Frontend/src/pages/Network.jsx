@@ -6,7 +6,7 @@ const Network = () => {
   const [activeTab, setActiveTab] = useState("discover");
 
   return (
-    <div className="bg-gray-100 min-h-screen py-8">
+    <div className="bg-gray-200 min-h-screen py-8">
       <div className="max-w-4xl mx-auto px-4 space-y-6">
         {/* Page Title */}
         <h1 className="text-2xl font-semibold text-gray-800">My Network</h1>
