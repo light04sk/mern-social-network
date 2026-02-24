@@ -5,9 +5,11 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import PublicLayout from "./layouts/PublicLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
-import Feed from "./pages/feed";
+import Feed from "./pages/Feed";
 import Network from "./pages/Network";
 import Message from "./pages/Message";
+import Profile from "./pages/Profile";
+import ProfilePosts from "./pages/ProfilePosts";
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/feed" element={<Feed />} />
           <Route path="/network" element={<Network />} />
           <Route path="/message" element={<Message />} />
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/profile/:id/posts" element={<ProfilePosts />} />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}

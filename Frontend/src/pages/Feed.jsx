@@ -1,14 +1,18 @@
+import { useState } from "react";
 import ProfileCard from "../components/Dashboard/ProfileCard";
 import ProfileStatsCard from "../components/Dashboard/ProfileStatsCard";
 import CreatePostCard from "../components/Dashboard/CreatePostCard";
 import PostCard from "../components/Dashboard/PostCard";
 import NewsCard from "../components/Dashboard/NewsCard";
 import PromoCard from "../components/Dashboard/PromoCard";
-import { useState } from "react";
 import PostModal from "../components/modal/Modal";
+import { userPosts as initialPosts } from "../data/userPosts";
 
 const Feed = () => {
   const [open, setOpen] = useState(false);
+
+  // this now acts like your temporary backend
+  const [posts, setPosts] = useState(initialPosts);
 
   return (
     <div className="bg-gray-200 min-h-screen py-6">
@@ -21,9 +25,17 @@ const Feed = () => {
 
         {/* CENTER FEED */}
         <div className="col-span-12 md:col-span-6 space-y-4">
+          {/* Create Post */}
           <CreatePostCard onOpen={() => setOpen(true)} />
-          <PostCard />
-          <PostCard />
+
+          {/* POSTS RENDERED FROM DATA */}
+          {posts.length > 0 ? (
+            posts.map((post) => <PostCard key={post.id} post={post} />)
+          ) : (
+            <div className="bg-white rounded-xl p-6 text-center text-gray-500">
+              No posts yet
+            </div>
+          )}
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -33,6 +45,7 @@ const Feed = () => {
         </div>
       </div>
 
+      {/* CREATE POST MODAL */}
       <PostModal isOpen={open} setOpen={setOpen} />
     </div>
   );
