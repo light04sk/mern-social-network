@@ -5,7 +5,6 @@ import {
   FaBriefcase,
   FaCommentDots,
   FaBell,
-  FaUserCircle,
   FaSearch,
 } from "react-icons/fa";
 
@@ -60,12 +59,27 @@ const Navbar2 = () => {
         </div>
 
         {/* RIGHT PROFILE */}
-        <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-lg transition">
-          <FaUserCircle size={32} className="text-gray-600" />
-          <span className="hidden sm:block text-sm font-medium text-gray-700">
-            Me
-          </span>
-        </div>
+        <NavLink
+          to="/profile/ssdfd"
+          className={({ isActive }) =>
+            `relative flex flex-col items-center text-xs transition-all duration-200 pb-2 ${
+              isActive ? "text-blue-600" : "text-gray-500 hover:text-blue-600"
+            }`
+          }
+        >
+          <div
+            className="w-10 h-10 mt-2 rounded-full overflow-hidden 
+                  ring-1 ring-gray-300 
+                  hover:ring-blue-500 transition"
+          >
+            <img
+              src="https://i.pravatar.cc/150"
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="mt-1 font-medium tracking-wide">Profile</span>
+        </NavLink>
       </div>
     </nav>
   );
