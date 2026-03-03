@@ -8,6 +8,7 @@ import {
   logout,
   register,
   updateProfileData,
+  updateUserAndProfile,
   updateUserProfile,
   uploadPictures,
 } from "../controllers/userController.js";
@@ -42,9 +43,10 @@ router.put(
 router.post("/user_update", authentication, updateUserProfile);
 router.get("/get_user_and_profile", authentication, getUserAndProfile);
 router.post("/update_profile_data", authentication, updateProfileData);
-router.get("/user/get_all_users", getAllUserProfile);
+router.get("/get_all_users", getAllUserProfile);
 router.get("/user/:id", getUserProfileById);
-router.get("/user/download_resume", downloadProfile);
+router.get("/download_resume", downloadProfile);
+router.post("/update_profile", authentication, updateUserAndProfile);
 
 router.get("/self", authentication, (req, res) => {
   return res.status(200).json({
